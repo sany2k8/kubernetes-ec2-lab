@@ -13,7 +13,7 @@ Make sure port `30080` (within the 30000-32767 NodePort range you opened in Chap
 ## Scaling
 
 ```bash
-kubectl scale deployment webapp -n webapp --replicas=4
+kubectl scale deployment webapp -n webapp --replicas=2
 ```
 
 Watch it happen:
