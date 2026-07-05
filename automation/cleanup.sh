@@ -5,6 +5,6 @@ echo ">> Deleting Kubernetes resources..."
 kubectl delete -f k8s/ --ignore-not-found
 
 echo ">> Removing Docker image..."
-docker image rm webapp:v1 2>/dev/null || true
+sudo docker image rm webapp:v1 2>/dev/null || true
 
 echo ">> Cleanup complete."

@@ -61,12 +61,15 @@ sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-Initialize the cluster:
-
 ```bash
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 
+> **Note:** If you are running on a `t2.micro` or any instance with less than 2GB of RAM/2 CPUs, `kubeadm` will fail with preflight checks. You can ignore those checks by running:
+> ```bash
+> sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU,Mem
+> ```
+> 
 > The `--pod-network-cidr` must match the CIDR expected by the pod network add-on you install next (Flannel uses `10.244.0.0/16`).
 
 Configure `kubectl` for your user (copy the admin config kubeadm generated):

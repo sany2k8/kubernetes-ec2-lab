@@ -20,7 +20,7 @@ sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 echo ">> Initializing cluster..."
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU,Mem
 
 mkdir -p "$HOME/.kube"
 sudo cp -i /etc/kubernetes/admin.conf "$HOME/.kube/config"
