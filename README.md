@@ -122,27 +122,6 @@ kubernetes-ec2-webapp/
 └── screenshots/
 ```
 
-### Create the folder structure in one shot
-
-Run this locally (or on the EC2 box) to scaffold every folder and empty file before you start filling them in:
-
-```bash
-mkdir -p kubernetes-ec2-webapp/{manual-deployment,automation,app/public,k8s,screenshots}
-cd kubernetes-ec2-webapp
-
-touch README.md
-
-touch manual-deployment/{01-ec2-setup.md,02-install-docker.md,03-install-kubernetes.md,04-create-node-app.md,05-build-docker-image.md,06-deploy-kubernetes.md,07-access-application.md,troubleshooting.md}
-
-touch automation/{01-server-setup.sh,02-install-docker.sh,03-install-kubernetes.sh,04-create-project.sh,05-build-image.sh,06-deploy.sh,07-scale.sh,cleanup.sh}
-
-touch app/server.js app/package.json app/Dockerfile app/public/index.html
-
-touch k8s/namespace.yaml k8s/deployment.yaml k8s/service.yaml k8s/ingress.yaml
-
-chmod +x automation/*.sh
-```
-
 ---
 
 ## Prerequisites
